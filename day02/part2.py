@@ -2,9 +2,6 @@ with open('input.txt', 'r') as file:
     data = [(line.split()) for line in file.read().split('\n')]
 
 
-# rock = 1
-# paper = 2
-# scissor = 3
 def get_score(opponent, round):
     if round == 'X':
         if opponent == 'A':
