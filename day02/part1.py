@@ -17,7 +17,7 @@ def get_score(opponent, you):
     elif opponent == 'A' and you == 'Y' or opponent == 'B' and you == 'Z' or opponent == 'C' and you == 'X':
         return 6 + your_shape_score
     else:
-        return 0 + your_shape_score
+        return your_shape_score
 
 
 print(sum([get_score(*d) for d in data]))
