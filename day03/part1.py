@@ -6,7 +6,7 @@ sum_priorities = 0
 for line in data:
     items = list(line)
 
-    for i in set(items[:(len(items)//2)]).intersection(set(items[len(items)//2:])):
+    for i in set(items[:(len(items)//2)]) & set(items[len(items)//2:]):
         if ord(i[0]) > 96:
             sum_priorities += ord(i) - 96
         else:
