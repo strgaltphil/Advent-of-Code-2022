@@ -6,7 +6,7 @@ setup_data.reverse()
 
 crate_stacks = list()
 
-def pop_n(stack ,n):
+def pop_n(stack, n):
     for _ in range(n):
         yield crate_stacks[stack].pop()
 
