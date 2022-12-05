@@ -22,7 +22,7 @@ for d in setup_data:
             crate_stacks.append([])
 
     for index, crate in enumerate(crates):
-        if crate is not None:
+        if crate:
             crate_stacks[index].append(crate)
 
 for d in data[data.index('') + 1:]:
