@@ -34,15 +34,15 @@ def create_data(day, year='2022'):
         with open(f"{folder_name}/input.txt", 'w') as file:
             file.write(data)
 
-        lines = ["with open('input.txt', 'r') as file:\n", "\tdata = [line for line in file.read().split('\\n')]\n\n"]
+        lines = [
+            "with open('input.txt', 'r') as file:\n",
+            "\tdata = [line for line in file.read().split('\\n')]\n\n"
+        ]
 
-        if not os.path.exists(f"{folder_name}/part1.py"):
-            with open(f"{folder_name}/part1.py", "w") as file:
-                file.writelines(lines)
-
-        if not os.path.exists(f"{folder_name}/part2.py"):
-            with open(f"{folder_name}/part2.py", "w") as file:
-                file.writelines(lines)
+        for file in [f"{folder_name}/part{r}.py" for r in range(1, 3)]:
+            if not os.path.exists(file):
+                with open(file, "w") as writer:
+                    writer.writelines(lines)
     except:
         sys.exit('Error writing file')
 
