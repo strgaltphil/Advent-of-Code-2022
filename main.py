@@ -13,7 +13,9 @@ def create_data(day, year='2022'):
     if(not load_dotenv() or not dotenv_values('.env')['COOKIE']):
         sys.exit("Error loading session id")
 
-    request = urllib.request.Request(f"https://adventofcode.com/{year}/day/{day}/input")
+    request = urllib.request.Request(
+        f"https://adventofcode.com/{year}/day/{day}/input"
+    )
     request.add_header('cookie', dotenv_values('.env')['COOKIE'])
 
     try:
