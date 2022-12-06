@@ -5,12 +5,11 @@ import sys
 import os
 import getopt
 from datetime import date
-from dotenv import load_dotenv, dotenv_values
+from dotenv import dotenv_values
 
 def create_data(day, year='2022'):
 
-    env = load_dotenv()
-    if(not load_dotenv() or not dotenv_values('.env')['COOKIE']):
+    if(not dotenv_values('.env')['COOKIE']):
         sys.exit("Error loading session id")
 
     request = urllib.request.Request(
